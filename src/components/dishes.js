@@ -1,8 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
-
-// Be sure to include styles at some point, probably during your bootstrapping
-import 'react-select/dist/react-select.css';
+import './dishes.css'
 
 class Dishes extends React.Component {
 
@@ -41,10 +38,7 @@ class Dishes extends React.Component {
 
           <div className="form-inline">
 
-            <input ref="inputDish" type="text" className="form-control" id="dish" placeholder="Dish" />
-            <input ref="inputPrice" type="number" className="form-control" id="price" placeholder="Price" />
-            <select multiple onChange={this.grabSelect} ref="inputPeoplePaying" className="selectpicker" id="people-paying">
-
+            <select multiple onChange={this.grabSelect} ref="inputPeoplePaying" className="form-control dishes-input-people" id="people-paying">
               {
                 this.props.peopleComing.map(function(name, index) {
                    return (
@@ -52,9 +46,13 @@ class Dishes extends React.Component {
                    )
                 })
               }
-
             </select>
-            <buttton onClick={function(){this.props.submit(this.inputDish.value, this.inputPrice.value, this.grabSelect())}.bind(this)} className="btn btn-info" id="add-food" type="button">Add it</buttton>
+
+            <input ref="inputDish" type="text" className="form-control dishes-input" id="dish" placeholder="Dish" />
+            <input ref="inputPrice" type="number" className="form-control dishes-input" id="price" placeholder="Price" />
+
+
+            <buttton onClick={function(){this.props.submit(this.inputDish.value, this.inputPrice.value, this.grabSelect())}.bind(this)} className="btn btn-primary add-dish-btn" id="add-food" type="button">ADD IT</buttton>
 
           </div>
 
