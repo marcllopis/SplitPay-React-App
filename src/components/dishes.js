@@ -49,7 +49,7 @@ class Dishes extends React.Component {
             </select>
 
             <input ref="inputDish" type="text" className="form-control dishes-input" id="dish" placeholder="Dish" />
-            <input ref="inputPrice" type="number" className="form-control dishes-input" id="price" placeholder="Price" />
+            <input ref="inputPrice" type="number" className="form-control dishes-input no-border-right" id="price" placeholder="Price" />
 
 
             <buttton onClick={function(){this.props.submit(this.inputDish.value, this.inputPrice.value, this.grabSelect())}.bind(this)} className="btn btn-primary add-dish-btn" id="add-food" type="button">ADD IT</buttton>

@@ -3,6 +3,7 @@ import React from 'react';
 import PeopleComing from './peopleComing';
 import Dishes from './dishes';
 import PostIt from './postIt';
+import SplitPostIt from './splitPostIt';
 
 
 
@@ -15,6 +16,7 @@ class App extends React.Component {
       dishes: [],
       showResume : false,
       showSplitBtn: false,
+      showFinalNote: false,
       split: []
     } // i add the peopleComing as a property of the state object, it will initialize as an empty array
   }
@@ -64,10 +66,10 @@ class App extends React.Component {
 
   submitSplit(){
 
-console.log("final step", this.state.peopleComing)
-console.log("final step", this.state.dishes)
-var peoplee = this.state.peopleComing;
-var dishess = this.state.dishes;
+    console.log("final step", this.state.peopleComing)
+    console.log("final step", this.state.dishes)
+    var peoplee = this.state.peopleComing;
+    var dishess = this.state.dishes;
 
     var listUsers = [];
         peoplee.forEach(function(name){
@@ -87,18 +89,18 @@ var dishess = this.state.dishes;
         console.log("FINAALS",listUsers)
 
     this.state.split.push(listUsers)
-    var listUsers = this.state.split
 
     this.setState({
-      split: listUsers
-
+      split: listUsers,
+      showFinalNote: true,
     });
-
-
   }
 
-
-
+  submitGoBack(){
+    this.setState({
+      showFinalNote: false,
+    });
+  }
 
   render() {
     return (
@@ -111,10 +113,13 @@ var dishess = this.state.dishes;
               <h2> People coming today </h2>
               <br/>
               <PeopleComing {...this.state} submit={this.submitPeople.bind(this)}/>
+              <SplitPostIt {...this.state} submit={this.submitGoBack.bind(this)}/ >
+
             </div>
 
             <div className="col-md-5">
               <PostIt {...this.state} submit={this.submitSplit.bind(this)} / >
+
             </div>
           </div>
           <div className="hide" ref="show">
@@ -123,6 +128,7 @@ var dishess = this.state.dishes;
 
         </div>
       </div>
+
 
       )
     }

@@ -2,13 +2,14 @@
 .white-note{
   background:#fefabc;
   padding:15px;
-  height: 50vh;
+  min-height: 50vh;
   -moz-transform: rotate(7deg);
   -webkit-transform: rotate(7deg);
   -o-transform: rotate(7deg);
   -ms-transform: rotate(7deg);
   transform: rotate(7deg);
 
+  overflow: auto;
   box-shadow: 0px 4px 6px #333;
   -moz-box-shadow: 0px 4px 6px #333;
   -webkit-box-shadow: 0px 4px 6px #333;
@@ -56,4 +57,50 @@ to   { opacity: 1; }
   font-weight: 600;
   letter-spacing: 5px;
   padding-left: 25px;
+}
+
+.btn-note-custom{
+  float:right;
+  background-color: rgba(0,0,0,0);
+  color:black;
+  margin-top: 30px;
+  font-weight: bold;
+  border-top: 0;
+  border-left: 0;
+  border-color: black;
+  font-size: 20px;
+}
+
+.btn-note-custom:hover{
+  background-color: #fcc662;
+  color:white;
+  border-color:black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.btn-note-custom:active{
+  background-color: #fcc662;
+  color:white;
+  border-color:black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.btn-note-custom:focus{
+  background-color: #fcc662;
+  color:white;
+  border-color:black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+
+
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
 }

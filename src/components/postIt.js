@@ -6,7 +6,7 @@ class PostIt extends React.Component {
   componentDidUpdate(){ // every time i render new information, the component is re-rendered so i use component did update to assign the value to empty string
     this.refs.visible.className = "white-note show"
     if(this.props.showSplitBtn === true){
-      this.refs.splitBtn.className = "btn btn-info show"
+      this.refs.splitBtn.className = "btn btn-info btn-note-custom show"
     }
   }
 
@@ -22,7 +22,7 @@ class PostIt extends React.Component {
           var pplcoming =   this.props.dishes.map(function(dish, index) {
               return (
                 <div key={index}>
-                  <span className="names-on-list"> -{dish.people.toString().replace(/,/g , " and ")} ordered {dish.name}, it's {dish.price} €</span>
+                  <span className="names-on-list"> -<strong>{dish.people.toString().replace(/,/g , " and ")}</strong> ordered {dish.name}, it's {dish.price} €</span>
                 </div>
               )
           })
@@ -35,8 +35,9 @@ class PostIt extends React.Component {
             <div id="list-of-people">
               {pplcoming}
             </div>
+            <button ref="splitBtn" className="btn btn-info btn-note-custom hide" onClick={function(){this.props.submit()}.bind(this)}>Split the check</button>
+
           </div>
-          <button ref="splitBtn" className="btn btn-info hide" onClick={function(){this.props.submit()}.bind(this)}>Split it</button>
         </div>
       )
     }

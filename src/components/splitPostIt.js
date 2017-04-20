@@ -1,30 +1,35 @@
 import React from 'react';
-import './postIt.css'
+import './splitPostIt.css'
 
-class PostIt extends React.Component {
+class SplitPostIt extends React.Component {
 
   componentDidUpdate(){ // every time i render new information, the component is re-rendered so i use component did update to assign the value to empty string
-    this.refs.visible.className = "white-note show"
-    if(this.props.showSplitBtn === true){
-      this.refs.splitBtn.className = "btn btn-info show"
-    }
+    if(this.props.showFinalNote === true){
+        this.refs.visible.className = "white-note-split show"
+      } else if(this.props.showFinalNote === false){
+        this.refs.visible.className = "white-note-split hide"
+      }
+
   }
 
+
+
     render() {
-
-
+      var splitted = this.props.split.map(function(name, index) {
+         return (
+             <h3  key={index}>- <strong>{name.name}</strong> will pay {name.total.toFixed(2)} €</h3>
+         )
+      })
       return (
-        <div>
-          <div ref="visible" className="white-note hide">
-            <h3>Look who we have around...</h3>
+          <div ref="visible" className="white-note-split hide">
+            <h1>Don't fight! Here you have what everybody should pay:</h1>
             <div id="list-of-people">
-              {pplcoming}
+              {splitted}
+              <button className="btn btn-info btn-note-custom" onClick={function(){this.props.submit()}.bind(this)}>Go Back</button>
             </div>
           </div>
-          <button ref="splitBtn" className="btn btn-info hide" onClick={function(){this.props.submit()}.bind(this)}>Split it</button>
-        </div>
       )
     }
 }
 
-export default PostIt;
+export default SplitPostIt;

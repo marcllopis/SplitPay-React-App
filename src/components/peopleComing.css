@@ -53,8 +53,41 @@
   width: 70px;
   height: auto;
   font-family: 'Acme', sans-serif;
+  background-color: rgba(0,0,0,0);
+  color:black;
+  font-weight: bold;
+  border-top: 0;
+  border-left: 0;
+  border-color: black;
+  font-size: 15px;
 
 }
+
+
+.add-people-btn:hover{
+  background-color: #65c1d8;
+  color:white;
+  border-color:black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.add-people-btn:active{
+  background-color: #65c1d8;
+  color:white;
+  border-color:black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.add-people-btn:focus{
+  background-color: #65c1d8;
+  color:white;
+  border-color:black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
 
 
 .hide{

@@ -17,6 +17,10 @@
   box-shadow: inset 0 0 0 rgba(0,0,0,0);
 }
 
+.no-border-right{
+  border-right: 0;
+}
+
 .dishes-input-people{
   background: transparent;
   border: 0px  ;
@@ -47,9 +51,45 @@
 }
 
 
+
+
+
 .add-dish-btn{
   width: 70px;
   height: auto;
   font-family: 'Acme', sans-serif;
+  background-color: rgba(0,0,0,0);
+  color:black;
+  font-weight: bold;
+  border-top: 0;
+  border-left: 0;
+  border-color: black;
+  font-size: 15px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
 
+
+.add-dish-btn:hover{
+  background-color: #65c1d8;
+  color:white;
+  border-color:black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.add-dish-btn:active{
+  background-color: #65c1d8;
+  color:white;
+  border-color:black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.add-dish-btn:focus{
+  background-color: #65c1d8;
+  color:white;
+  border-color:black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
 }
