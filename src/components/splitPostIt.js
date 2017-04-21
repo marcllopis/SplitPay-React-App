@@ -22,9 +22,13 @@ class SplitPostIt extends React.Component {
       })
       return (
           <div ref="visible" className="white-note-split hide">
-            <h1>Don't fight! Here you have what everybody should pay:</h1>
+            <h1><b>Don't fight!</b> Here you have what everybody should pay:</h1>
             <div id="list-of-people">
               {splitted}
+              <button className="btn btn-info btn-note-custom" onClick={function(){this.props.submit()}.bind(this)}>Rate the food</button>
+<br/>
+  <br/>
+
               <button className="btn btn-info btn-note-custom" onClick={function(){this.props.submit()}.bind(this)}>Go Back</button>
             </div>
           </div>

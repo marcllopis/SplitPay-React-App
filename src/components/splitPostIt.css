@@ -25,6 +25,9 @@
           animation: fadein 1s;
 }
 
+
+
+
 @keyframes fadein {
 from { opacity: 0; }
 to   { opacity: 1; }
@@ -64,6 +67,41 @@ to   { opacity: 1; }
 }
 
 
+.btn-rating-custom{
+  float:left;
+  background-color: rgba(0,0,0,0);
+  color:black;
+  margin-top: 30px;
+  font-weight: bold;
+  border-top: 0;
+  border-right: 0;
+  border-color: black;
+  font-size: 20px;
+}
+
+.btn-rating-custom:hover{
+  background-color: #fcc662;
+  color:white;
+  border-color:black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.btn-rating-custom:active{
+  background-color: #fcc662;
+  color:white;
+  border-color:black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.btn-rating-custom:focus{
+  background-color: #fcc662;
+  color:white;
+  border-color:black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
 
 
 
